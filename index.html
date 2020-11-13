@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>NPS API App</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <h1>Looking for a park? Let us know where, and we'll send you a list!</h1>
+    <div class="input">
+      <form id="location">
+        <input type="text" id="state" placeholder="e.g. MT"/>
+        <label for="max-results">Max Results:</label>
+        <input type="number" id="max-results" placeholder="If blank, returns 10" value=""/>
+        <br>
+        <br>
+        <div class="button">
+          <input type="submit" value="Let's Go!"/>
+          <br><br>
+        </div>
+      </form>
+    </div>
+    <div class="results hidden"></div>
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
+
+<!-- Requirements:
+The user must be able to search for parks in one or more states.
+The user must be able to set the max number of results, with a default of 10.
+The search must trigger a call to NPS's API.
+The parks in the given state must be displayed on the page. Include at least:
+Full name
+Description
+Website URL
+The user must be able to make multiple searches and see only the results for the current search.
+As a stretch goal, try adding the park's address to the results.
+
+This exercise should take about an hour to complete. If you're having trouble, attend a Q&A session or reach out on Slack for help. -->
