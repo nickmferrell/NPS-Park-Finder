@@ -44,10 +44,18 @@ function getParks(query, limit=10) {
   let url = baseUrl + '?' + queryString
   console.log(url)
   fetch(url)
-    .then(response => response.json())
-    .then(function(responseJson){
+    .then(response => {
+      if (response.ok) {
+        return response.json()
+      }
+      throw new Error(response.statusText);
+    })
+    .then(responseJson => {
       renderResults(responseJson)
       console.log(responseJson.data)
+    })
+    .catch(err => {
+      $('#js-error-message').text(`Something went wrong: ${err.message}`)
     })
 
 }
